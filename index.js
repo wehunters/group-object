@@ -28,14 +28,42 @@ exports.group = function(Arr,param) {
 }
 
 
-exports.objsort = function(arr,key) {
+exports.objsort = function(arr,keys) {
     return arr.sort((a,b)=>{
-        if(a.name.toUpperCase()>b.name.toUpperCase()){
-            return 1;
-        }else if(a.name.toUpperCase()<b.name.toUpperCase()){
-            return -1;
+        if(Array.isArray(param)){
+            for(let key of keys){
+                let a_val=a[key];
+                let b_val=b[key];
+                if((typeof a_val )=='string'){
+                    a_val = a_val.toUpperCase();
+                }
+                if((typeof b_val )=='string'){
+                    b_val = b_val.toUpperCase();
+                }
+                if(a_val>b_val){
+                    return 1;
+                }else if(a_val<b_val){
+                    return -1;
+                }else{
+                    return 0;
+                }
+            }
         }else{
-            return 0;
-        }
+            let a_val=a[keys];
+            let b_val=b[keys];
+            if((typeof a_val )=='string'){
+                a_val = a_val.toUpperCase();
+            }
+            if((typeof b_val )=='string'){
+                b_val = b_val.toUpperCase();
+            }
+            if(a_val>b_val){
+                return 1;
+            }else if(a_val<b_val){
+                return -1;
+            }else{
+                return 0;
+            }
+        }        
     })
 }
