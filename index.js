@@ -30,7 +30,7 @@ exports.group = function(Arr,param) {
 
 exports.objsort = function(arr,keys) {
     return arr.sort((a,b)=>{
-        if(Array.isArray(param)){
+        if(Array.isArray(keys)){
             for(let key of keys){
                 let a_val=a[key];
                 let b_val=b[key];
