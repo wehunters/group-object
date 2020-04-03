@@ -1,5 +1,5 @@
 # group-object
-grouping and sorting function for an object
+grouping and sorting function for an object using multiple properties
 
 ## Installation
 
@@ -17,46 +17,10 @@ Include the module
 var groupObj = require('@hunters/group-object');
 ```
 
-group an object for a key
+group an object for multiple properties
 
 ```javascript
-var arrs=[
-    {
-        id:1,
-        name:"aaa",
-        values:"atest"
-    },{
-        id:1,
-        name:"aaa",
-        values:"atest"
-    },{
-        id:1,
-        name:"bbbb",
-        values:"btest"
-    },{
-        id:2,
-        name:"ccc",
-        values:"ctest"
-    },{
-        id:1,
-        name:"ccc",
-        values:"ctest"
-    }
-];
-var groupedData =groupedDatagroupObj.group(arrs,['id','name']);
-console.log(groupedData); 
-
-var groupedData =groupedDatagroupObj.group(arrs,name);
-console.log(groupedData); 
-
-```
-
-
-
-```javascript
-// sort a json object for given keys
-
-let arrToSort = [{
+let arrObj = [{
     "h_id": "3",
     "city": "Dallas",
     "state": "TX",
@@ -85,12 +49,30 @@ let arrToSort = [{
     "price": "962500"
 }
 ];
-let keys = ['city','state','price'];
-let sortedData = obj.objsort(arrToSort,keys);
+```
+
+```javascript
+var groupedData = groupObj.group(arrObj,['price','city']);
+console.log(groupedData); 
+
+var groupedData = groupObj.group(arrObj,'city');
+console.log(groupedData); 
+
+```
+
+
+sort a json object for multiple properties
+
+```javascript
+let sortedData = groupObj.objSort(arrObj,['city','state','price']);
+console.log(sortedData); 
+
+var sortedData = groupObj.objSort(arrObj,'city');
+console.log(sortedData); 
 ```
 ## Notes
 
-Javascript helper functions for json object grouping and sorting
+Javascript helper functions for json object grouping and sorting for multiple properties
 
 ## License
 

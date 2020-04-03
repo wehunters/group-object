@@ -28,7 +28,7 @@ exports.group = function(Arr,param) {
 }
 
 
-exports.objsort = function(arr,keys) {
+exports.objSort = function(arr,keys) {
     return arr.sort((a,b)=>{
         if(Array.isArray(keys)){
             for(let key of keys){
