@@ -47,36 +47,46 @@ var groupedData =groupedDatagroupObj.group(arrs,['id','name');
 console.log(addresses); 
 ```
 
-sort a json object for given keys
+
 
 ```javascript
-let arrToSort = [{"h_id":"3",
-"city":"Dallas",
-"state":"TX",
-"zip":"75201",
-"price":"162500"},
-{"h_id":"4",
-"city":"Bevery Hills",
-"state":"CA",
-"zip":"90210",
-"price":"319250"},
-{"h_id":"6",
-"city":"Dallas",
-"state":"TX",
-"zip":"75000",
-"price":"556699"},
-{"h_id":"5",
-"city":"New York",
-"state":"NY",
-"zip":"00010",
-"price":"962500"}
+// sort a json object for given keys
+
+let arrToSort = [{
+    "h_id": "3",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": "162500"
+},
+{
+    "h_id": "4",
+    "city": "Bevery Hills",
+    "state": "CA",
+    "zip": "90210",
+    "price": "319250"
+},
+{
+    "h_id": "6",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75000",
+    "price": "556699"
+},
+{
+    "h_id": "5",
+    "city": "New York",
+    "state": "NY",
+    "zip": "00010",
+    "price": "962500"
+}
 ];
 let keys = ['city','state','price'];
 let sortedData = obj.objsort(arrToSort,keys);
 ```
 ## Notes
 
-This module does not decode any mime-word or punycode encoded strings, it is only a basic parser for parsing the base data, you need to decode the encoded parts later by yourself
+Javascript helper functions for json object grouping and sorting
 
 ## License
 
