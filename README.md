@@ -43,8 +43,12 @@ var arrs=[
         values:"ctest"
     }
 ];
-var groupedData =groupedDatagroupObj.group(arrs,['id','name');
-console.log(addresses); 
+var groupedData =groupedDatagroupObj.group(arrs,['id','name']);
+console.log(groupedData); 
+
+var groupedData =groupedDatagroupObj.group(arrs,name);
+console.log(groupedData); 
+
 ```
 
 
