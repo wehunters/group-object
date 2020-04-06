@@ -1,6 +1,6 @@
 {
   "name": "@hunters/group-object",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Javascript helper functions for json object grouping and sorting",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "groupobject", 
     "group-object", 
     "group", 
+    "grouping",
     "groupby", 
     "group json", 
     "group by key", 
@@ -20,11 +21,12 @@
     "group array of objects", 
     "groupby multiple keys", 
     "group by multiple properties", 
+    "sort",
     "sorting", 
     "sort object", 
     "sort by key", 
     "sort array of object", 
-    "sort n=by multiple keys", 
+    "sort by multiple keys", 
     "sorting json objects", 
     "sort by multiple keys", 
     "sort by multiple properties"

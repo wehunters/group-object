@@ -35,10 +35,18 @@ exports.objSort = function(arr,keys) {
                 let a_val=a[key];
                 let b_val=b[key];
                 if((typeof a_val )=='string'){
-                    a_val = a_val.toUpperCase();
+                    if(!isNaN(a_val)){
+                        a_val = parseFloat(a_val);
+                    }else{
+                        a_val = a_val.toUpperCase();
+                    }
                 }
                 if((typeof b_val )=='string'){
-                    b_val = b_val.toUpperCase();
+                    if(!isNaN(b_val)){
+                        b_val = parseFloat(b_val);
+                    }else{
+                        b_val = b_val.toUpperCase();
+                    }
                 }
                 if(a_val>b_val){
                     return 1;
@@ -52,10 +60,18 @@ exports.objSort = function(arr,keys) {
             let a_val=a[keys];
             let b_val=b[keys];
             if((typeof a_val )=='string'){
-                a_val = a_val.toUpperCase();
+                if(!isNaN(a_val)){
+                    a_val = parseFloat(a_val);
+                }else{
+                    a_val = a_val.toUpperCase();
+                }
             }
             if((typeof b_val )=='string'){
-                b_val = b_val.toUpperCase();
+                if(!isNaN(b_val)){
+                    b_val = parseFloat(b_val);
+                }else{
+                    b_val = b_val.toUpperCase();
+                }
             }
             if(a_val>b_val){
                 return 1;

@@ -15,11 +15,8 @@ Include the module
 
 ```javascript
 var groupObj = require('@hunters/group-object');
-```
+// group an object for multiple properties
 
-group an object for multiple properties
-
-```javascript
 let arrObj = [{
     "h_id": "3",
     "city": "Dallas",
@@ -49,21 +46,14 @@ let arrObj = [{
     "price": "962500"
 }
 ];
-```
 
-```javascript
 var groupedData = groupObj.group(arrObj,['price','city']);
 console.log(groupedData); 
 
 var groupedData = groupObj.group(arrObj,'city');
 console.log(groupedData); 
 
-```
-
-
-sort a json object for multiple properties
-
-```javascript
+// sort a json object for multiple properties
 let sortedData = groupObj.objSort(arrObj,['city','state','price']);
 console.log(sortedData); 
 
