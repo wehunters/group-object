@@ -1,114 +1,104 @@
-exports.group = function(Arr,param) {
-    let output ={};
-    if(Array.isArray(param)){
+exports.group = function (Arr, param) {
+    let output = {};
+    if (Array.isArray(param)) {
         for (let value of Arr) {
 
-            let tmpp='';
-            for(let key of param){
-                tmpp =tmpp+'-'+ value[key];
+            let tmpp = '';
+            for (let key of param) {
+                tmpp = tmpp + '-' + value[key];
             }
 
-            if(!output[tmpp]){
-                output[tmpp]=[];
+            if (!output[tmpp]) {
+                output[tmpp] = [];
             }
 
-            output[tmpp].push(value);          
+            output[tmpp].push(value);
         }
-    }else{
+    } else {
         for (let value of Arr) {
-            if(!output[value[param]]){
-                output[value[param]]=[];
+            if (!output[value[param]]) {
+                output[value[param]] = [];
             }
-            if(value[param]){
+            if (value[param]) {
                 output[value[param]].push(value);
-            }            
+            }
         }
     }
-    return output;    
+    return output;
 }
 
 
-exports.objSort = function(arr,keys) {
-    return arr.sort((a,b)=>{
-        if(Array.isArray(keys)){
-            for(let key of keys){
-                let a_val=a[key];
-                let b_val=b[key];
-                if((typeof a_val )=='string'){
-                    if(!isNaN(a_val)){
+exports.objSort = function (arr, keys) {
+    return arr.sort((a, b) => {
+        if (Array.isArray(keys)) {
+            for (let key of keys) {
+                let a_val = a[key];
+                let b_val = b[key];
+                if ((typeof a_val) == 'string') {
+                    if (!isNaN(a_val)) {
                         a_val = parseFloat(a_val);
-                    }else{
+                    } else {
                         a_val = a_val.toUpperCase();
                     }
                 }
-                if((typeof b_val )=='string'){
-                    if(!isNaN(b_val)){
+                if ((typeof b_val) == 'string') {
+                    if (!isNaN(b_val)) {
                         b_val = parseFloat(b_val);
-                    }else{
+                    } else {
                         b_val = b_val.toUpperCase();
                     }
                 }
-                if(a_val>b_val){
-                    return 1;
-                }else if(a_val<b_val){
-                    return -1;
-                }else{
-                    return 0;
+                if (a_val == b_val) {
+                    continue;
                 }
+                return a_val > b_val;
+
             }
-        }else if((typeof keys)=='string'){
-            let a_val=a[keys];
-            let b_val=b[keys];
-            if((typeof a_val )=='string'){
-                if(!isNaN(a_val)){
+        } else if ((typeof keys) == 'string') {
+            let a_val = a[keys];
+            let b_val = b[keys];
+            if ((typeof a_val) == 'string') {
+                if (!isNaN(a_val)) {
                     a_val = parseFloat(a_val);
-                }else{
+                } else {
                     a_val = a_val.toUpperCase();
                 }
             }
-            if((typeof b_val )=='string'){
-                if(!isNaN(b_val)){
+            if ((typeof b_val) == 'string') {
+                if (!isNaN(b_val)) {
                     b_val = parseFloat(b_val);
-                }else{
+                } else {
                     b_val = b_val.toUpperCase();
                 }
             }
-            if(a_val>b_val){
-                return 1;
-            }else if(a_val<b_val){
-                return -1;
-            }else{
-                return 0;
+            if (a_val == b_val) {
+                continue;
             }
-        } else if((typeof keys)=='object'){
-            for(let key in keys){
-                let a_val=a[key];
-                let b_val=b[key];
-                let response = 0;
-                if((typeof a_val )=='string'){
-                    if(!isNaN(a_val)){
+            return a_val > b_val;
+        } else if ((typeof keys) == 'object') {
+            for (let key in keys) {
+                let a_val = a[key];
+                let b_val = b[key];
+                if ((typeof a_val) == 'string') {
+                    if (!isNaN(a_val)) {
                         a_val = parseFloat(a_val);
-                    }else{
+                    } else {
                         a_val = a_val.toUpperCase();
                     }
                 }
-                if((typeof b_val )=='string'){
-                    if(!isNaN(b_val)){
+                if ((typeof b_val) == 'string') {
+                    if (!isNaN(b_val)) {
                         b_val = parseFloat(b_val);
-                    }else{
+                    } else {
                         b_val = b_val.toUpperCase();
                     }
                 }
-                if(a_val>b_val){
-                    response = 1;
-                }else if(a_val<b_val){
-                    response = -1;
+                if (a_val == b_val) {
+                    continue;
                 }
-                if(keys[key]==-1){
-                    response = response*-1;
-                }
-                return response;
+                return keys[key] != -1 ? (a_val > b_val) : !(a_val > b_val);
+
             }
-        }     
+        }
     })
 }

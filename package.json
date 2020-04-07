@@ -1,6 +1,6 @@
 {
   "name": "@hunters/group-object",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Javascript helper functions for json object grouping and sorting",
   "main": "index.js",
   "scripts": {
