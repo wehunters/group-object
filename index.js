@@ -56,7 +56,7 @@ exports.objSort = function(arr,keys) {
                     return 0;
                 }
             }
-        }else{
+        }else if((typeof keys)=='string'){
             let a_val=a[keys];
             let b_val=b[keys];
             if((typeof a_val )=='string'){
@@ -80,6 +80,35 @@ exports.objSort = function(arr,keys) {
             }else{
                 return 0;
             }
-        }        
+        } else if((typeof keys)=='object'){
+            for(let key in keys){
+                let a_val=a[key];
+                let b_val=b[key];
+                let response = 0;
+                if((typeof a_val )=='string'){
+                    if(!isNaN(a_val)){
+                        a_val = parseFloat(a_val);
+                    }else{
+                        a_val = a_val.toUpperCase();
+                    }
+                }
+                if((typeof b_val )=='string'){
+                    if(!isNaN(b_val)){
+                        b_val = parseFloat(b_val);
+                    }else{
+                        b_val = b_val.toUpperCase();
+                    }
+                }
+                if(a_val>b_val){
+                    response = 1;
+                }else if(a_val<b_val){
+                    response = -1;
+                }
+                if(keys[key]==-1){
+                    response = response*-1;
+                }
+                return response;
+            }
+        }     
     })
 }

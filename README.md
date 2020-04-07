@@ -57,6 +57,11 @@ console.log(groupedData);
 let sortedData = groupObj.objSort(arrObj,['city','state','price']);
 console.log(sortedData); 
 
+//sort for multiple keys with defined order where 1/-1 is for ascending/descending orders
+let sortedData = groupObj.objSort(arrObj,{'city':1,'state':1,'price':-1});
+console.log(sortedData); 
+
+//sort for single property
 var sortedData = groupObj.objSort(arrObj,'city');
 console.log(sortedData); 
 ```
