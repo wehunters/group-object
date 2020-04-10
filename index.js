@@ -2,16 +2,13 @@ exports.group = function (Arr, param) {
     let output = {};
     if (Array.isArray(param)) {
         for (let value of Arr) {
-
             let tmpp = '';
             for (let key of param) {
                 tmpp = tmpp + '-' + value[key];
             }
-
             if (!output[tmpp]) {
                 output[tmpp] = [];
             }
-
             output[tmpp].push(value);
         }
     } else {
@@ -71,9 +68,9 @@ exports.objSort = function (arr, keys) {
                     b_val = b_val.toUpperCase();
                 }
             }
-            if (a_val == b_val) {
-                continue;
-            }
+            // if (a_val == b_val) {
+            //     continue;
+            // }
             return a_val > b_val;
         } else if ((typeof keys) == 'object') {
             for (let key in keys) {
