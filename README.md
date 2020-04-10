@@ -1,5 +1,7 @@
 # group-object
-grouping and sorting function for an object using multiple properties
+Javascript helper functions for json object grouping and sorting for multiple properties
+
+![npm](https://img.shields.io/npm/v/@hunters/group-object?color=green&style=flat-square)   ![NPM](https://img.shields.io/npm/l/@hunters/group-object)  ![GitHub issues](https://img.shields.io/github/issues/wehunters/group-object)  ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@hunters/group-object)
 
 ## Installation
 
