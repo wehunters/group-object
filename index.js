@@ -49,7 +49,6 @@ exports.objSort = function (arr, keys) {
                     continue;
                 }
                 return a_val > b_val;
-
             }
         } else if ((typeof keys) == 'string') {
             let a_val = a[keys];
@@ -68,9 +67,6 @@ exports.objSort = function (arr, keys) {
                     b_val = b_val.toUpperCase();
                 }
             }
-            // if (a_val == b_val) {
-            //     continue;
-            // }
             return a_val > b_val;
         } else if ((typeof keys) == 'object') {
             for (let key in keys) {
@@ -94,7 +90,6 @@ exports.objSort = function (arr, keys) {
                     continue;
                 }
                 return keys[key] != -1 ? (a_val > b_val) : !(a_val > b_val);
-
             }
         }
     })

@@ -33,11 +33,11 @@ let arrObj = [{
 console.log("Data for processing :");
 console.log(arrObj);
 
-let sortedData = groupObject.objSort(arrObj,['city','state','price']);
+let sortedData = groupObject.objSort(arrObj, ['city', 'state', 'price']);
 console.log("Data for after sorting :");
-console.log(sortedData); 
+console.log(sortedData);
 
-var groupedData = groupObject.group(arrObj,['price','city']);
+var groupedData = groupObject.group(arrObj, ['price', 'city']);
 console.log("Data for after grouping :");
-console.log(groupedData); 
+console.log(groupedData);
 
