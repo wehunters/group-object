@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.7] - 2020-04-24
+
+### Added
+- in grouping key's trailing "_" issue resolved
+- readme updated
+
+## [1.2.6] - 2020-04-15
+
+### Added
+- Meta data updated
+
 ## [1.2.5] - 2020-04-10
 
 ### Added

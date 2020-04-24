@@ -15,6 +15,35 @@ npm install @hunters/group-object
 
 Include the module
 
+## Options available 
+
+
+
+
+### for groupig 
+
+```javascript
+//we can pass either a single property
+groupObj.group(arrObj,'price');
+
+//we can pass either  multiple properties as array
+groupObj.group(arrObj,['price','city']);
+```
+
+### for sortting
+
+```javascript
+// we can pass single property 
+groupObj.objSort(arrObj,'city');
+
+// we can pass array of properties 
+groupObj.objSort(arrObj,['city','state','price']);
+
+// we can pass s properties with order as object
+groupObj.objSort(arrObj,{'city':1,'state':1,'price':-1});
+```
+
+
 ```javascript
 var groupObj = require('@hunters/group-object');
 // group an object for multiple properties

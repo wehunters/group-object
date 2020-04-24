@@ -2,14 +2,17 @@ exports.group = function (Arr, param) {
     let output = {};
     if (Array.isArray(param)) {
         for (let value of Arr) {
-            let tmpp = '';
+            let tmp_keys = [];
+            let object_key = '';
             for (let key of param) {
-                tmpp = tmpp + '-' + value[key];
+                tmp_keys.push(value[key]);
             }
-            if (!output[tmpp]) {
-                output[tmpp] = [];
+            object_key=tmp_keys.join('_');
+
+            if (!output[object_key]) {
+                output[object_key] = [];
             }
-            output[tmpp].push(value);
+            output[object_key].push(value);
         }
     } else {
         for (let value of Arr) {
