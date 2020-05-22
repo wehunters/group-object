@@ -26,8 +26,36 @@ exports.group = function (Arr, param) {
     }
     return output;
 }
+exports.groupObject = function (Arr, param) {
+    return new Promise((resolve,reject)=>{
+        let output = {};
+        if (Array.isArray(param)) {
+            for (let value of Arr) {
+                let tmp_keys = [];
+                let object_key = '';
+                for (let key of param) {
+                    tmp_keys.push(value[key]);
+                }
+                object_key=tmp_keys.join('_');
 
-
+                if (!output[object_key]) {
+                    output[object_key] = [];
+                }
+                output[object_key].push(value);
+            }
+        } else {
+            for (let value of Arr) {
+                if (!output[value[param]]) {
+                    output[value[param]] = [];
+                }
+                if (value[param]) {
+                    output[value[param]].push(value);
+                }
+            }
+        }
+        resolve(output);
+    });
+}
 exports.objSort = function (arr, keys) {
     return arr.sort((a, b) => {
         if (Array.isArray(keys)) {
@@ -96,4 +124,7 @@ exports.objSort = function (arr, keys) {
             }
         }
     })
+}
+exports.size = function (err, obj) {
+    return Object.keys(obj).length;
 }
