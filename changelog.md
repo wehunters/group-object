@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.8] - 2020-05-22
+
+### Added
+- function forsize of grouped objects added
+- group function with promise added
+
 ## [1.2.7] - 2020-04-24
 
 ### Added
